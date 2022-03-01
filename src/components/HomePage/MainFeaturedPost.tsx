@@ -36,14 +36,14 @@ export const MainFeaturedPost = () => {
             sx={{
               position: 'relative',
               p: { xs: 3, md: 15 },
-              pr: { md: 40 },
+              pr: { md: '10vh' },
             }}
           >
             <Typography component="h1" variant="h3" color="inherit" fontWeight="bold" gutterBottom>
-              Chúng tôi tạo ra các trò chơi Blockchain gây rối
+              We Create Disruptive Blockchain Games
             </Typography>
             <Typography variant="h5" fontSize={21} color="inherit">
-              Skrice là một studio thiết kế và phát triển trò chơi với sứ mệnh mang lại việc áp dụng hàng loạt công nghệ blockchain thông qua các thế giới kỹ thuật số do người chơi sở hữu.
+              Skrice is a game design and development studio with a mission to bring mass-adoption of blockchain technology through player-owned digital worlds.
             </Typography>
           </Box>
         </Grid>

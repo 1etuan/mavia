@@ -9,23 +9,23 @@ import { MultiActionAreaCard, FeaturedPost, MainFeaturedPost, Introduce } from '
 const cards = [
   {
     id: 1,
-    title: "Chất lượng trên mọi thứ",
-    description: "Chúng tôi tin rằng tập trung vào các chi tiết là những gì ngăn cách các trò chơi mang tính biểu tượng với cơ bản."
+    title: "Quality Over Everything",
+    description: "We believe that focusing on details are what separates iconic games from the basic."
   },
   {
     id: 2,
-    title: "Kinh tế cân bằng",
-    description: "Trò chơi của chúng tôi được xây dựng để có thể mở rộng quy mô đến một số lượng lớn người dùng, cả về mặt kỹ thuật và kinh tế."
+    title: "Balanced Economics",
+    description: "Our games are built to be able to scale to a mass number of users, both technically and economically."
   },
   {
     id: 3,
-    title: "Nền tảng chéo",
-    description: "Trò chơi của chúng tôi được xây dựng để chơi trên cả web máy tính để bàn và thiết bị di động, mang lại trải nghiệm chơi game thực sự phổ quát."
+    title: "Cross Platform",
+    description: "Our games are built to be played on both desktop web and mobile devices, giving a truly universal gaming experience."
   },
   {
     id: 4,
-    title: "Cộng đồng thuộc sở hữu",
-    description: "Cấu trúc của cơ chế trò chơi của chúng tôi tập trung xung quanh người chơi, trao quyền kiểm soát cho cộng đồng."
+    title: "Community Owned",
+    description: "The structure of our game mechanics are centered around the players, giving control to the community."
   },
 
 ]
@@ -33,24 +33,24 @@ const cards = [
 const posts = [
   {
     id: 1,
-    description: "Tất cả nội dung trò chơi của chúng tôi được thiết kế và phát triển từ đầu, từ thiết kế khái niệm đến mô hình nhân vật 3D và hình ảnh động.",
+    description: "All of our game content is designed and developed from scratch, from conceptual designs to 3D character modeling and animations.",
     image: "https://skrice.com/home/info-1.jpg",
     imageLabel: "string",
-    title: "Thiết kế và phát triển trò chơi hạng nhất"
+    title: "First-class Game Design and Development"
   },
   {
     id: 2,
-    description: "Nhóm phát triển của chúng tôi không chỉ đầu tư tài nguyên vào các trò chơi của chúng tôi mà còn xây dựng cơ sở hạ tầng dài hạn cho các trò chơi dựa trên Blockchain khác.",
+    description: "Engineering Infrastructure for Limitless PossibilitiesOur development team is not only investing resources into our games, but is also building long-term infrastructure for other Blockchain-based games.",
     image: "https://skrice.com/home/info-2.jpg",
     imageLabel: "string",
-    title: "Cơ sở hạ tầng kỹ thuật cho các khả năng vô hạn"
+    title: "Engineering Infrastructure for Limitless Possibilities"
   },
   {
     id: 3,
-    description: "Các trò chơi của chúng tôi sử dụng các mô hình kinh tế mà chúng tôi xử lý và thử nghiệm bằng cách sử dụng hàng trăm mô phỏng, đảm bảo khả năng phục hồi và cân bằng của tất cả các lĩnh vực của hệ sinh thái.",
+    description: "Our games use economic models which we process and test using hundreds of simulations, ensuring the resilience and balance of all sectors of the ecosystem.",
     image: "https://skrice.com/home/info-3.jpg",
     imageLabel: "string",
-    title: "Cách tiếp cận khoa học đối với kinh tế học trong trò chơi"
+    title: "Scientific approach to in-game economics"
   }
 ]
 
@@ -66,10 +66,10 @@ export default function HomePage() {
           fontWeight="bold"
           gutterBottom
         >
-          Trải nghiệm tương lai của game
+          Experience the future of gaming
         </Typography>
         <Typography variant="h5" fontSize={20} align="center" component="p">
-          Chúng tôi xây dựng trò chơi dựa trên các giá trị cơ bản mà chúng tôi tin rằng xác định thế hệ tiếp theo của trò chơi.
+          We build games based upon fundamental values which we believe define the next generation of gaming.
         </Typography>
       </Container>
 
@@ -82,7 +82,7 @@ export default function HomePage() {
           {posts.map((post) => <FeaturedPost post={post} />)}
         </Grid>
 
-        <Grid container sx={{ pt: 20, backgroundColor: "black", borderRadius: "10px" }} >
+        <Grid container sx={{ pt: 20, borderRadius: "10px" }} >
           <Introduce />
         </Grid>
       </Container>
