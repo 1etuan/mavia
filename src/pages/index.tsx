@@ -1,24 +1,29 @@
 import * as React from 'react';
+import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
-import { MultiActionAreaCard, FeaturedPost } from '@/components/card'
+import { MultiActionAreaCard, FeaturedPost, MainFeaturedPost, Introduce } from '@/components/HomePage'
 
 
 const cards = [
   {
+    id: 1,
     title: "Chất lượng trên mọi thứ",
     description: "Chúng tôi tin rằng tập trung vào các chi tiết là những gì ngăn cách các trò chơi mang tính biểu tượng với cơ bản."
   },
   {
+    id: 2,
     title: "Kinh tế cân bằng",
     description: "Trò chơi của chúng tôi được xây dựng để có thể mở rộng quy mô đến một số lượng lớn người dùng, cả về mặt kỹ thuật và kinh tế."
   },
   {
+    id: 3,
     title: "Nền tảng chéo",
     description: "Trò chơi của chúng tôi được xây dựng để chơi trên cả web máy tính để bàn và thiết bị di động, mang lại trải nghiệm chơi game thực sự phổ quát."
   },
   {
+    id: 4,
     title: "Cộng đồng thuộc sở hữu",
     description: "Cấu trúc của cơ chế trò chơi của chúng tôi tập trung xung quanh người chơi, trao quyền kiểm soát cho cộng đồng."
   },
@@ -53,18 +58,7 @@ const posts = [
 export default function HomePage() {
   return (
     <>
-      <div className='overflow-hidden xyz'>
-        <div className='relative flex items-center justify-center'>
-          <div className='absolute abc'>
-            <img src="https://skrice.com/vn/home/teaser.jpg" alt="" />
-          </div>
-          <div className='absolute top-[150px] left-[200px]'>
-            <div className='font-bold text-3xl text-white'>Chúng tôi tạo ra các trò chơi Blockchain gây rối</div>
-            <div>Skrice là một studio thiết kế và phát triển trò chơi với sứ mệnh mang lại việc áp dụng hàng loạt công nghệ blockchain thông qua các thế giới kỹ thuật số do người chơi sở hữu.</div>
-          </div>
-        </div>
-      </div>
-
+      <MainFeaturedPost />
       <Container disableGutters maxWidth="lg" component="main" sx={{ pt: 6, pb: 10 }}>
         <Typography
           variant="h4"
@@ -74,23 +68,25 @@ export default function HomePage() {
         >
           Trải nghiệm tương lai của game
         </Typography>
-        <Typography variant="h5" fontSize={22} align="center" component="p">
+        <Typography variant="h5" fontSize={20} align="center" component="p">
           Chúng tôi xây dựng trò chơi dựa trên các giá trị cơ bản mà chúng tôi tin rằng xác định thế hệ tiếp theo của trò chơi.
         </Typography>
       </Container>
 
       <Container disableGutters maxWidth="lg" component="main" sx={{ pt: 6, pb: 10 }}>
-        <Grid spacing={4}>
-          {cards.map((card, index) => <MultiActionAreaCard key={index} title={card.title} description={card.description} />)}
+        <Grid container spacing={4}>
+          {cards.map((card, index) => <MultiActionAreaCard key={index} card={card} />)}
         </Grid>
 
-        <Grid spacing={4} sx={{ pt: 20 }}>
-          {posts.map((post, index) => <FeaturedPost key={index} post={post} />)}
+        <Grid sx={{ flexGrow: 1, pt: 20 }} >
+          {posts.map((post) => <FeaturedPost post={post} />)}
         </Grid>
+
         <Grid container sx={{ pt: 20, backgroundColor: "black", borderRadius: "10px" }} >
-
+          <Introduce />
         </Grid>
       </Container>
+
     </>
   );
 }
