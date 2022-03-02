@@ -1,3 +1,4 @@
+/* eslint-disable unused-imports/no-unused-vars */
 /* eslint-disable react/jsx-no-undef */
 /* eslint-disable @next/next/no-img-element */
 import {
@@ -15,70 +16,60 @@ import { RiArrowRightLine } from 'react-icons/ri';
 import FlexBox from '@/components/atoms/FlexBox';
 import Button from '@/components/buttons/Button';
 import Seo from '@/components/Seo';
-import { FeaturedPost, Introduce } from '@/components/Studio';
 import { MultiActionAreaCard } from '@/components/Studio/CardAvatar';
 const cards = [
   {
-    id: 1,
+    url: '/images/avatar.jpeg',
     title: 'Quality Over Everything',
-    description:
-      'We believe that focusing on details are what separates iconic games from the basic.',
+    description: 'Game Dev Lead',
   },
   {
-    id: 2,
+    url: '/images/avatar.jpeg',
     title: 'Balanced Economics',
-    description:
-      'Our games are built to be able to scale to a mass number of users, both technically and economically.',
+    description: 'Game Dev Lead',
   },
   {
-    id: 3,
+    url: '/images/avatar.jpeg',
     title: 'Cross Platform',
-    description:
-      'Our games are built to be played on both desktop web and mobile devices, giving a truly universal gaming experience.',
+    description: 'Game Dev Lead',
   },
   {
-    id: 4,
+    url: '/images/avatar.jpeg',
     title: 'Community Owned',
-    description:
-      'The structure of our game mechanics are centered around the players, giving control to the community.',
+    description: 'Game Dev Lead',
   },
   {
-    id: 5,
     title: 'Community Owned',
-    description:
-      'The structure of our game mechanics are centered around the players, giving control to the community.',
+    url: '/images/avatar.jpeg',
+    description: 'Game Dev Lead',
   },
   {
-    id: 6,
     title: 'Community Owned',
-    description:
-      'The structure of our game mechanics are centered around the players, giving control to the community.',
+    url: '/images/avatar.jpeg',
+    description: 'Game Dev Lead',
   },
   {
-    id: 7,
+    url: '/images/avatar.jpeg',
     title: 'Community Owned',
-    description:
-      'The structure of our game mechanics are centered around the players, giving control to the community.',
+    description: 'Game Dev Lead',
   },
   {
-    id: 8,
+    url: '/images/avatar.jpeg',
     title: 'Community Owned',
-    description:
-      'The structure of our game mechanics are centered around the players, giving control to the community.',
+    description: 'Game Dev Lead',
   },
   {
-    id: 9,
+    url: '/images/avatar.jpeg',
     title: 'Community Owned',
-    description:
-      'The structure of our game mechanics are centered around the players, giving control to the community.',
+    description: 'Game Dev Lead',
   },
   {
-    id: 10,
+    url: '/images/avatar.jpeg',
     title: 'Community Owned',
-    description:
-      'The structure of our game mechanics are centered around the players, giving control to the community.',
+    description: 'Game Dev Lead',
   },
 ];
+
 const posts = [
   {
     id: 1,
@@ -184,7 +175,7 @@ function HomePage() {
           </FlexBox>
         </Grow>
 
-        <FlexBox className=' grid grid-cols-3 gap-3 '>
+        <FlexBox className=' grid grid-cols-2 gap-2 md:grid-cols-3 '>
           <Card variant='outlined'>
             <CardContent>
               <Typography gutterBottom variant='h5' component='div'>
@@ -247,44 +238,42 @@ function HomePage() {
             </CardContent>
           </Card>
         </FlexBox>
-        <FlexBox
-          className='w-100% justify-center bg-zinc-50 text-center'
-          mt={16}
-        >
-          <FlexBox flexDirection='column'>
-            <Typography component='h2' className='mb-4 text-6xl'>
-              Core Team
-            </Typography>
-            <Description>
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Suscipit
-              debitis ratione quasi vitae quidem rem repudiandae corrupti
-            </Description>
+      </Container>
+
+      <FlexBox
+        className=' justify-center bg-zinc-100 pt-40 pb-20 text-center'
+        mt={16}
+      >
+        <FlexBox flexDirection='column'>
+          <Typography component='h2' className='mb-4 text-3xl font-bold'>
+            Core Team
+          </Typography>
+
+          <Description className='m-auto'>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Suscipit
+            debitis ratione quasi vitae quidem rem repudiandae corrupti
+          </Description>
+
+          <FlexBox maxWidth='lg' component='main' sx={{ pt: 6, pb: 6 }}>
+            <Grid
+              className='grid grid-cols-2 gap-4 md:grid-cols-5'
+              // sm={0}
+              // md={
+              //   {
+              //     gridTemplateColumns: 'repeat(2, 1fr)',
+              //   } as unknown as GridSize
+              // }
+              // display='grid'
+              // gap={2}
+              // grid-template-columns: ;
+            >
+              {cards.map((card, index) => (
+                <MultiActionAreaCard key={index} card={card} />
+              ))}
+            </Grid>
           </FlexBox>
         </FlexBox>
-
-        <Container
-          disableGutters
-          maxWidth='lg'
-          component='main'
-          sx={{ pt: 6, pb: 10 }}
-        >
-          <Grid container spacing={4}>
-            {cards.map((card, index) => (
-              <MultiActionAreaCard key={index} card={card} />
-            ))}
-          </Grid>
-
-          <Grid sx={{ flexGrow: 1, pt: 20 }}>
-            {posts.map((post, index) => (
-              <FeaturedPost key={index} post={post} />
-            ))}
-          </Grid>
-
-          <Grid container sx={{ pt: 20, borderRadius: '10px' }}>
-            <Introduce />
-          </Grid>
-        </Container>
-      </Container>
+      </FlexBox>
     </>
   );
 }
