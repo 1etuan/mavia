@@ -11,7 +11,7 @@ interface FeaturedPostProps {
     image: string;
     imageLabel: string;
     title: string;
-    id: number
+    id: number;
   };
 }
 
@@ -19,29 +19,40 @@ const Image = ({ post }: FeaturedPostProps) => {
   return (
     <>
       <Paper elevation={0}>
-        <CardMedia component="img" sx={{ width: "100%", borderRadius: 2 }} image={post.image} alt={post.imageLabel} />
+        <CardMedia
+          component='img'
+          sx={{ width: '100%', borderRadius: 2 }}
+          image={post.image}
+          alt={post.imageLabel}
+        />
       </Paper>
     </>
-  )
-}
+  );
+};
 
 const Text = ({ post }: FeaturedPostProps) => {
   return (
     <>
-      <Paper elevation={0} sx={{ margin: "40px" }}>
-        <Typography gutterBottom component="p" variant="h4" fontSize={40} fontWeight="bold">
+      <Paper elevation={0} sx={{ margin: '40px' }}>
+        <Typography
+          gutterBottom
+          component='p'
+          variant='h4'
+          fontSize={40}
+          fontWeight='bold'
+        >
           {post.title}
         </Typography>
-        <Typography variant="subtitle1" fontSize={18} paragraph>
+        <Typography variant='subtitle1' fontSize={18} paragraph>
           {post.description}
         </Typography>
       </Paper>
     </>
-  )
-}
+  );
+};
 
 export const FeaturedPost = (props: FeaturedPostProps) => {
-  const { post } = props
+  const { post } = props;
 
   return (
     <>
@@ -54,21 +65,19 @@ export const FeaturedPost = (props: FeaturedPostProps) => {
             gap: 2,
           }}
         >
-          {
-            (post.id % 2 != 0) ? (
-              <>
-                <Image post={post} />
-                <Text post={post} />
-              </>
-            ) : (
-              <>
-                <Text post={post} />
-                <Image post={post} />
-              </>
-            )
-          }
+          {post.id % 2 != 0 ? (
+            <>
+              <Image post={post} />
+              <Text post={post} />
+            </>
+          ) : (
+            <>
+              <Text post={post} />
+              <Image post={post} />
+            </>
+          )}
         </Box>
       </Grid>
     </>
   );
-}
+};

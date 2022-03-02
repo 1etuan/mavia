@@ -4,7 +4,6 @@ import Paper from '@mui/material/Paper';
 import Typography from '@mui/material/Typography';
 import * as React from 'react';
 
-
 export const MainFeaturedPost = () => {
   return (
     <Paper
@@ -17,7 +16,7 @@ export const MainFeaturedPost = () => {
         backgroundRepeat: 'no-repeat',
         backgroundPosition: 'center',
         backgroundImage: `url(https://skrice.com/vn/home/teaser.jpg)`,
-        height: "60vh"
+        height: '60vh',
       }}
     >
       <Box
@@ -39,15 +38,23 @@ export const MainFeaturedPost = () => {
               pr: { md: '10vh' },
             }}
           >
-            <Typography component="h1" variant="h3" color="inherit" fontWeight="bold" gutterBottom>
+            <Typography
+              component='h1'
+              variant='h3'
+              color='inherit'
+              fontWeight='bold'
+              gutterBottom
+            >
               We Create Disruptive Blockchain Games
             </Typography>
-            <Typography variant="h5" fontSize={21} color="inherit">
-              Skrice is a game design and development studio with a mission to bring mass-adoption of blockchain technology through player-owned digital worlds.
+            <Typography variant='h5' fontSize={21} color='inherit'>
+              Skrice is a game design and development studio with a mission to
+              bring mass-adoption of blockchain technology through player-owned
+              digital worlds.
             </Typography>
           </Box>
         </Grid>
       </Grid>
     </Paper>
   );
-}
+};

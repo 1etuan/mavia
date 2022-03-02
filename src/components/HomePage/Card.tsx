@@ -11,43 +11,39 @@ import * as React from 'react';
 
 interface CardProps {
   card: {
-    title: string
-    description: string
-    id: number
-  }
+    title: string;
+    description: string;
+    id: number;
+  };
 }
 
 const Icon = (id: number) => {
   switch (id) {
     case 1:
-      return (<AssistantPhotoIcon sx={{ fontSize: 40 }} />)
+      return <AssistantPhotoIcon sx={{ fontSize: 40 }} />;
     case 2:
-      return (<ShowChartIcon sx={{ fontSize: 40 }} />)
+      return <ShowChartIcon sx={{ fontSize: 40 }} />;
     case 3:
-      return (<ShuffleIcon sx={{ fontSize: 40 }} />)
+      return <ShuffleIcon sx={{ fontSize: 40 }} />;
     case 4:
-      return (<GroupIcon sx={{ fontSize: 40 }} />)
+      return <GroupIcon sx={{ fontSize: 40 }} />;
     default:
-      return
+      return;
   }
-}
+};
 
 export const MultiActionAreaCard = ({ card }: CardProps) => {
   return (
     <Grid item md={3}>
-      <Card
-        sx={{ height: '100%', display: 'flex', flexDirection: 'column' }}
-      >
+      <Card sx={{ height: '100%', display: 'flex', flexDirection: 'column' }}>
         <CardHeader avatar={Icon(card.id)} />
         <CardContent sx={{ flexGrow: 1 }}>
-          <Typography gutterBottom variant="h5" component="h1">
+          <Typography gutterBottom variant='h5' component='h1'>
             {card.title}
           </Typography>
-          <Typography>
-            {card.description}
-          </Typography>
+          <Typography>{card.description}</Typography>
         </CardContent>
       </Card>
     </Grid>
   );
-}
+};
