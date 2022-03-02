@@ -7,8 +7,9 @@ import FlexBox from '../atoms/FlexBox';
 const AppWrapper = styled(FlexBox)(() => ({
   flexDirection: 'column',
   flex: 1,
-  minWidth: '100vw',
+  // minWidth: '100vw',
   minHeight: '200vh',
+  background: '#fff',
 }));
 
 export default function Layout({ children }: { children: React.ReactNode }) {
