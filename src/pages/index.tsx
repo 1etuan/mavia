@@ -1,9 +1,9 @@
-import * as React from 'react';
-import Box from '@mui/material/Box';
+import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
-import Container from '@mui/material/Container';
-import { MultiActionAreaCard, FeaturedPost, MainFeaturedPost, Introduce } from '@/components/HomePage'
+import * as React from 'react';
+
+import { FeaturedPost, Introduce, MainFeaturedPost, MultiActionAreaCard } from '@/components/HomePage'
 
 
 const cards = [
@@ -35,22 +35,22 @@ const posts = [
     id: 1,
     description: "All of our game content is designed and developed from scratch, from conceptual designs to 3D character modeling and animations.",
     image: "https://skrice.com/home/info-1.jpg",
-    imageLabel: "string",
+    imageLabel: "First-class Game Design and Development",
     title: "First-class Game Design and Development"
   },
   {
     id: 2,
     description: "Engineering Infrastructure for Limitless PossibilitiesOur development team is not only investing resources into our games, but is also building long-term infrastructure for other Blockchain-based games.",
     image: "https://skrice.com/home/info-2.jpg",
-    imageLabel: "string",
+    imageLabel: "Engineering Infrastructure for Limitless Possibilities",
     title: "Engineering Infrastructure for Limitless Possibilities"
   },
   {
     id: 3,
     description: "Our games use economic models which we process and test using hundreds of simulations, ensuring the resilience and balance of all sectors of the ecosystem.",
     image: "https://skrice.com/home/info-3.jpg",
-    imageLabel: "string",
-    title: "Scientific approach to in-game economics"
+    imageLabel: "First-class Game Design and Development",
+    title: "First-class Game Design and Development"
   }
 ]
 
@@ -79,7 +79,7 @@ export default function HomePage() {
         </Grid>
 
         <Grid sx={{ flexGrow: 1, pt: 20 }} >
-          {posts.map((post) => <FeaturedPost post={post} />)}
+          {posts.map((post, index) => <FeaturedPost key={index} post={post} />)}
         </Grid>
 
         <Grid container sx={{ pt: 20, borderRadius: "10px" }} >

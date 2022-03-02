@@ -1,8 +1,9 @@
-import * as React from 'react';
+import Box from '@mui/material/Box';
+import Grid from '@mui/material/Grid';
 import Paper from '@mui/material/Paper';
 import Typography from '@mui/material/Typography';
-import Grid from '@mui/material/Grid';
-import Box from '@mui/material/Box';
+import * as React from 'react';
+
 
 export const MainFeaturedPost = () => {
   return (
@@ -19,7 +20,6 @@ export const MainFeaturedPost = () => {
         height: "60vh"
       }}
     >
-      {<img style={{ display: 'none' }} src="https://skrice.com/vn/home/teaser.jpg" alt="img" />}
       <Box
         sx={{
           position: 'absolute',

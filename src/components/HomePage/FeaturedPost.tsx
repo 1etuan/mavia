@@ -1,9 +1,9 @@
-import * as React from 'react';
-import Typography from '@mui/material/Typography';
-import Grid from '@mui/material/Grid';
-import CardMedia from '@mui/material/CardMedia';
 import Box from '@mui/material/Box';
+import CardMedia from '@mui/material/CardMedia';
+import Grid from '@mui/material/Grid';
 import Paper from '@mui/material/Paper';
+import Typography from '@mui/material/Typography';
+import * as React from 'react';
 
 interface FeaturedPostProps {
   post: {
