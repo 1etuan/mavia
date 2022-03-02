@@ -33,7 +33,7 @@ export const Introduce = () => {
           </Typography>
           <ArrowLink
             as={ButtonLink}
-            className='inline-flex items-center bg-primary-600 text-white mt-3 mb-3'
+            className='mt-3 mb-3 inline-flex items-center bg-primary-600 text-white'
             href='/'
           >
             View open positions
