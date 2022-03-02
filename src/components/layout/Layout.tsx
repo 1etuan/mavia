@@ -9,7 +9,6 @@ const AppWrapper = styled(FlexBox)(() => ({
   flex: 1,
   minWidth: '100vw',
   minHeight: '200vh',
-  background: 'green',
 }));
 
 export default function Layout({ children }: { children: React.ReactNode }) {

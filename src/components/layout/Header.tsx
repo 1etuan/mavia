@@ -56,7 +56,14 @@ export default function Header() {
               <span className='text-black'>Components</span>
             </UnderlineLink>
             <Button>Logo</Button>
-            <Button>Logo</Button>
+            <Button>
+              <UnderlineLink
+                href='/studio'
+                className='border-[unset] border-b-0'
+              >
+                <span className='text-black'>studio</span>
+              </UnderlineLink>
+            </Button>
           </FlexBox>
           <FlexBox>
             <Button>Logo</Button>
