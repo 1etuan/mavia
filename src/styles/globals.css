@@ -115,10 +115,4 @@
   .animated-underline:focus-visible {
     background-size: 0 2px, 100% 2px;
   }
-  .abc {
-    height: 10vh;
-  }
-  .xyz {
-    height: 60vh;
-  }
 }
