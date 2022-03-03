@@ -1,15 +1,8 @@
+/* eslint-disable jsx-a11y/alt-text */
 /* eslint-disable unused-imports/no-unused-vars */
 /* eslint-disable react/jsx-no-undef */
 /* eslint-disable @next/next/no-img-element */
-import {
-  Card,
-  CardContent,
-  Container,
-  Grid,
-  Grow,
-  styled,
-  Typography,
-} from '@mui/material';
+import { Card, Container, Grid, Grow, styled, Typography } from '@mui/material';
 import * as React from 'react';
 import { RiArrowRightLine } from 'react-icons/ri';
 
@@ -17,6 +10,48 @@ import FlexBox from '@/components/atoms/FlexBox';
 import Button from '@/components/buttons/Button';
 import Seo from '@/components/Seo';
 import { MultiActionAreaCard } from '@/components/Studio/CardAvatar';
+import { FeaturedCard } from '@/components/Studio/FeatureCard';
+import { MediaCard } from '@/components/Studio/MediaCard';
+
+const FeatureCard = [
+  {
+    description:
+      'Our games are built to be played on both desktop web and mobile devices, giving a truly universal gaming experience.',
+    title: 'Quality Over Everything',
+    id: 1,
+  },
+  {
+    description:
+      'Our games are built to be played on both desktop web and mobile devices, giving a truly universal gaming experience.',
+    title: 'Quality Over Everything',
+    id: 2,
+  },
+  {
+    description:
+      'Our games are built to be played on both desktop web and mobile devices, giving a truly universal gaming experience.',
+    title: 'Quality Over Everything',
+    id: 3,
+  },
+  {
+    description:
+      'Our games are built to be played on both desktop web and mobile devices, giving a truly universal gaming experience.',
+    title: 'Quality Over Everything',
+    id: 4,
+  },
+  {
+    description:
+      'Our games are built to be played on both desktop web and mobile devices, giving a truly universal gaming experience.',
+    title: 'Quality Over Everything',
+    id: 5,
+  },
+  {
+    description:
+      'Our games are built to be played on both desktop web and mobile devices, giving a truly universal gaming experience.',
+    title: 'Quality Over Everything',
+    id: 6,
+  },
+];
+
 const cards = [
   {
     url: '/images/avatar.jpeg',
@@ -67,6 +102,72 @@ const cards = [
     url: '/images/avatar.jpeg',
     title: 'Community Owned',
     description: 'Game Dev Lead',
+  },
+];
+
+const mediaCards = [
+  {
+    title: 'Official Mavia Land NFT Mint Date and Details',
+    img: '/images/nft.png',
+    description:
+      '**UPDATE:** The first-ever Land NFT Mint will now begin on Friday, March 4 2022 at 10:00 AM EST (NYC&nbsp;Time)',
+    link: 'https://www.google.com/?hl=vi',
+  },
+  {
+    title: 'Official Mavia Land NFT Mint Date and Details',
+    img: '/images/nft.png',
+    description:
+      '**UPDATE:** The first-ever Land NFT Mint will now begin on Friday, March 4 2022 at 10:00 AM EST (NYC&nbsp;Time)',
+    link: 'https://www.google.com/?hl=vi',
+  },
+  {
+    title: 'Official Mavia Land NFT Mint Date and Details',
+    img: '/images/nft.png',
+    description:
+      '**UPDATE:** The first-ever Land NFT Mint will now begin on Friday, March 4 2022 at 10:00 AM EST (NYC&nbsp;Time)',
+    link: 'https://www.google.com/?hl=vi',
+  },
+  {
+    title: 'Official Mavia Land NFT Mint Date and Details',
+    img: '/images/nft.png',
+    description:
+      '**UPDATE:** The first-ever Land NFT Mint will now begin on Friday, March 4 2022 at 10:00 AM EST (NYC&nbsp;Time)',
+    link: 'https://www.google.com/?hl=vi',
+  },
+  {
+    title: 'Official Mavia Land NFT Mint Date and Details',
+    img: '/images/nft.png',
+    description:
+      '**UPDATE:** The first-ever Land NFT Mint will now begin on Friday, March 4 2022 at 10:00 AM EST (NYC&nbsp;Time)',
+    link: 'https://www.google.com/?hl=vi',
+  },
+  {
+    title: 'Official Mavia Land NFT Mint Date and Details',
+    img: '/images/nft.png',
+    description:
+      '**UPDATE:** The first-ever Land NFT Mint will now begin on Friday, March 4 2022 at 10:00 AM EST (NYC&nbsp;Time)',
+    link: 'https://www.google.com/?hl=vi',
+  },
+  {
+    title: 'Official Mavia Land NFT Mint Date and Details',
+    img: '/images/nft.png',
+    description:
+      '**UPDATE:** The first-ever Land NFT Mint will now begin on Friday, March 4 2022 at 10:00 AM EST (NYC&nbsp;Time)',
+    link: 'https://www.google.com/?hl=vi',
+  },
+  {
+    title: 'Official Mavia Land NFT Mint Date and Details',
+    img: '/images/nft.png',
+    description:
+      '**UPDATE:** The first-ever Land NFT Mint will now begin on Friday, March 4 2022 at 10:00 AM EST (NYC&nbsp;Time)',
+    link: 'https://www.google.com/?hl=vi',
+  },
+  {
+    title: 'Official Mavia Land NFT Mint Date and Details',
+    img: '/images/nft.png',
+    description:
+      '**UPDATE:** The first-ever Land NFT Mint will now begin on Friday, March 4 2022 at 10:00 AM EST (NYC&nbsp;Time)',
+    link: 'https://www.google.com/?hl=vi',
   },
 ];
 
@@ -175,67 +276,13 @@ function HomePage() {
           </FlexBox>
         </Grow>
 
-        <FlexBox className=' grid grid-cols-2 gap-2 md:grid-cols-3 '>
+        <FlexBox>
           <Card variant='outlined'>
-            <CardContent>
-              <Typography gutterBottom variant='h5' component='div'>
-                Lizard
-              </Typography>
-              <Typography variant='body2' color='text.secondary'>
-                Lizards are a widespread group of squamate reptiles
-              </Typography>
-            </CardContent>
-          </Card>
-          <Card variant='outlined'>
-            <CardContent>
-              <Typography gutterBottom variant='h5' component='div'>
-                Lizard
-              </Typography>
-              <Typography variant='body2' color='text.secondary'>
-                Lizards are a widespread group of squamate reptiles
-              </Typography>
-            </CardContent>
-          </Card>
-          <Card variant='outlined'>
-            <CardContent>
-              <Typography gutterBottom variant='h5' component='div'>
-                Lizard
-              </Typography>
-              <Typography variant='body2' color='text.secondary'>
-                Lizards are a widespread group of squamate reptiles
-              </Typography>
-            </CardContent>
-          </Card>
-          <Card variant='outlined'>
-            <CardContent>
-              <Typography gutterBottom variant='h5' component='div'>
-                Lizard
-              </Typography>
-              <Typography variant='body2' color='text.secondary'>
-                Lizards are a widespread group of squamate reptiles
-              </Typography>
-            </CardContent>
-          </Card>
-          <Card variant='outlined'>
-            <CardContent>
-              <Typography gutterBottom variant='h5' component='div'>
-                Lizard
-              </Typography>
-              <Typography variant='body2' color='text.secondary'>
-                Lizards are a widespread group of squamate reptiles
-              </Typography>
-            </CardContent>
-          </Card>
-
-          <Card variant='outlined'>
-            <CardContent>
-              <Typography gutterBottom variant='h5' component='div'>
-                Lizard
-              </Typography>
-              <Typography variant='body2' color='text.secondary'>
-                Lizards are a widespread group of squamate reptiles
-              </Typography>
-            </CardContent>
+            <Grid container spacing={4}>
+              {FeatureCard.map((card, index) => (
+                <FeaturedCard key={index} card={card} />
+              ))}
+            </Grid>
           </Card>
         </FlexBox>
       </Container>
@@ -255,18 +302,7 @@ function HomePage() {
           </Description>
 
           <FlexBox maxWidth='lg' component='main' sx={{ pt: 6, pb: 6 }}>
-            <Grid
-              className='grid grid-cols-2 gap-4 md:grid-cols-5'
-              // sm={0}
-              // md={
-              //   {
-              //     gridTemplateColumns: 'repeat(2, 1fr)',
-              //   } as unknown as GridSize
-              // }
-              // display='grid'
-              // gap={2}
-              // grid-template-columns: ;
-            >
+            <Grid className='grid grid-cols-2 gap-4 md:grid-cols-5'>
               {cards.map((card, index) => (
                 <MultiActionAreaCard key={index} card={card} />
               ))}
@@ -274,6 +310,76 @@ function HomePage() {
           </FlexBox>
         </FlexBox>
       </FlexBox>
+
+      <Container className='flex flex-row'>
+        <FlexBox className='grid-rows-1 gap-4 md:grid-rows-2'>
+          <FlexBox className='  rounded-xl object-cover'>
+            <img src='/images/clone.jpeg' />
+          </FlexBox>
+        </FlexBox>
+        <FlexBox className='flex flex-col'>
+          <div>
+            <p>
+              Blockchain gaming will transform the industry, bringing to players
+              possibilities that would never have been imagined in a Web 2.0
+              environment. By including NFTs into gaming, we introduce players
+              to the concepts of verifiable ownership, item provenance and
+              participation in decision-making and governance.
+            </p>
+
+            <p>
+              Here at Skrice Studios, our mission reaches beyond game production
+              to bring new light into the true potential and the opportunities
+              of blockchain gaming. By bringing high-end NFT gaming experiences
+              to the masses, we are speeding up the adoption of
+              cryptocurrencies. We are paving the future for metaverse standards
+              by which players become active creators of virtual spaces.
+            </p>
+          </div>
+          <FlexBox>
+            <img className='rounded-full' src='/images/duong.png' />
+            <FlexBox className='flex flex-col'>
+              <Typography className='h4'>Duy Tran</Typography>
+              <Typography>CTO</Typography>
+            </FlexBox>
+          </FlexBox>
+        </FlexBox>
+      </Container>
+
+      <FlexBox className='justify-center text-center' mt={24}>
+        <FlexBox flexDirection='column'>
+          <Typography component='h1' className='mb-4 text-6xl'>
+            Press
+          </Typography>
+          <Description>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Suscipit
+            debitis ratione quasi vitae quidem rem repudiandae
+          </Description>
+          <Grow in timeout={1000}>
+            <FlexBox mx='auto' mt={4} justifyContent='center'>
+              <TransitionButton variant='outline' className='ml-2'>
+                <span>View all stories</span>
+                <RiArrowRightLine className='ml-2' />
+              </TransitionButton>
+            </FlexBox>
+          </Grow>
+        </FlexBox>
+      </FlexBox>
+
+      <Container>
+        <FlexBox
+          className='cursor-pointer '
+          maxWidth='lg'
+          component='main'
+          sx={{ pt: 12, pb: 6, pl: 6 }}
+        >
+          <Grid className='grid  grid-cols-1 gap-4 md:grid-cols-3'>
+            {mediaCards.map((card, index) => (
+              <MediaCard key={index} card={card} />
+            ))}
+          </Grid>
+        </FlexBox>
+      </Container>
     </>
   );
 }

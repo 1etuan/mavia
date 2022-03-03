@@ -1,6 +1,6 @@
+import { CardMedia } from '@mui/material';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
-import CardHeader from '@mui/material/CardHeader';
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 import * as React from 'react';
@@ -18,8 +18,13 @@ export const MultiActionAreaCard = ({ card }: CardProps) => {
   return (
     <Grid item columns={40}>
       <Card sx={{ height: '100%' }}>
-        <CardHeader>{/* <NextImage src={card.url}></NextImage> */}</CardHeader>
-        <CardContent>
+        <CardMedia
+          component='img'
+          className='gap-3	 object-scale-down'
+          height='90'
+          image={card.url}
+        />
+        <CardContent className=''>
           <Typography
             gutterBottom
             variant='subtitle1'
