@@ -4,10 +4,10 @@ import Typography from '@mui/material/Typography';
 import * as React from 'react';
 
 import {
-  InfoHomePage,
-  Introduce,
   BannerHomePage,
   CardHomePage,
+  InfoHomePage,
+  Introduce,
 } from '@/components/HomePage';
 
 const cards = [
