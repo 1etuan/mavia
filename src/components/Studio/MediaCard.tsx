@@ -19,7 +19,10 @@ interface CardProps {
 
 export const MediaCard = ({ card }: CardProps) => {
   return (
-    <Card sx={{ maxWidth: 345 }}>
+    <Card
+      sx={{ maxWidth: 345 }}
+      className='transition-all hover:scale-105 hover:shadow-2xl'
+    >
       <FlexBox>
         <CardMedia component='img' height='140' image={card.img} />
       </FlexBox>

@@ -4,7 +4,11 @@
 /* eslint-disable @next/next/no-img-element */
 import { Card, Container, Grid, Grow, styled, Typography } from '@mui/material';
 import * as React from 'react';
-import { RiArrowRightLine } from 'react-icons/ri';
+import {
+  RiArrowRightLine,
+  RiDoubleQuotesL,
+  RiDoubleQuotesR,
+} from 'react-icons/ri';
 
 import FlexBox from '@/components/atoms/FlexBox';
 import Button from '@/components/buttons/Button';
@@ -301,46 +305,59 @@ function HomePage() {
             debitis ratione quasi vitae quidem rem repudiandae corrupti
           </Description>
 
-          <FlexBox maxWidth='lg' component='main' sx={{ pt: 6, pb: 6 }}>
+          <FlexBox
+            maxWidth='lg'
+            component='main'
+            className='justify-center'
+            sx={{ pt: 6, pb: 6 }}
+          >
             <Grid className='grid grid-cols-2 gap-4 md:grid-cols-5'>
               {cards.map((card, index) => (
-                <MultiActionAreaCard key={index} card={card} />
+                <MultiActionAreaCard
+                  key={index}
+                  card={{ ...card, id: index }}
+                />
               ))}
             </Grid>
           </FlexBox>
         </FlexBox>
       </FlexBox>
-
-      <Container className='flex flex-row'>
-        <FlexBox className='grid-rows-1 gap-4 md:grid-rows-2'>
-          <FlexBox className='  rounded-xl object-cover'>
-            <img src='/images/clone.jpeg' />
+      <Container style={{ backgroundColor: 'transparent' }}>
+        <FlexBox py={8} className='flex-col md:flex-row'>
+          <FlexBox className='flex-1 items-center justify-center'>
+            <div className='object-contain'>
+              <img
+                src='/images/clone.jpeg'
+                className='w-full max-w-sm rounded-lg'
+              />
+            </div>
           </FlexBox>
-        </FlexBox>
-        <FlexBox className='flex flex-col'>
-          <div>
-            <p>
+          <FlexBox className='mt-8 ml-8 flex flex-1 flex-col md:mt-0'>
+            <RiDoubleQuotesL />
+            <Typography lineHeight={3} textAlign='justify'>
               Blockchain gaming will transform the industry, bringing to players
               possibilities that would never have been imagined in a Web 2.0
               environment. By including NFTs into gaming, we introduce players
               to the concepts of verifiable ownership, item provenance and
               participation in decision-making and governance.
-            </p>
+            </Typography>
 
-            <p>
+            <Typography lineHeight={3} textAlign='justify'>
               Here at Skrice Studios, our mission reaches beyond game production
               to bring new light into the true potential and the opportunities
               of blockchain gaming. By bringing high-end NFT gaming experiences
               to the masses, we are speeding up the adoption of
               cryptocurrencies. We are paving the future for metaverse standards
               by which players become active creators of virtual spaces.
-            </p>
-          </div>
-          <FlexBox>
-            <img className='rounded-full' src='/images/duong.png' />
-            <FlexBox className='flex flex-col'>
-              <Typography className='h4'>Duy Tran</Typography>
-              <Typography>CTO</Typography>
+            </Typography>
+            <RiDoubleQuotesR />
+
+            <FlexBox className='mx-auto mt-8 md:mt-auto'>
+              <img className='rounded-full' src='/images/duong.png' />
+              <FlexBox className='ml-4 flex flex-col items-start justify-center'>
+                <Typography className='h4'>Duy Tran</Typography>
+                <Typography>CTO</Typography>
+              </FlexBox>
             </FlexBox>
           </FlexBox>
         </FlexBox>
