@@ -1,4 +1,4 @@
-export { MultiActionAreaCard } from './Card';
-export { FeaturedPost } from './FeaturedPost';
+export { BannerHomePage } from './Banner';
+export { CardHomePage } from './Card';
+export { InfoHomePage } from './Info';
 export { Introduce } from './Introduce';
-export { MainFeaturedPost } from './MainFeaturedPost';
