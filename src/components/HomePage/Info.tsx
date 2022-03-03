@@ -5,7 +5,7 @@ import Paper from '@mui/material/Paper';
 import Typography from '@mui/material/Typography';
 import * as React from 'react';
 
-interface FeaturedPostProps {
+interface InfoHomePageProps {
   post: {
     description: string;
     image: string;
@@ -15,7 +15,7 @@ interface FeaturedPostProps {
   };
 }
 
-const Image = ({ post }: FeaturedPostProps) => {
+const Image = ({ post }: InfoHomePageProps) => {
   return (
     <>
       <Paper elevation={0}>
@@ -30,7 +30,7 @@ const Image = ({ post }: FeaturedPostProps) => {
   );
 };
 
-const Text = ({ post }: FeaturedPostProps) => {
+const Text = ({ post }: InfoHomePageProps) => {
   return (
     <>
       <Paper elevation={0} sx={{ margin: '40px' }}>
@@ -51,7 +51,7 @@ const Text = ({ post }: FeaturedPostProps) => {
   );
 };
 
-export const FeaturedPost = (props: FeaturedPostProps) => {
+export const InfoHomePage = (props: InfoHomePageProps) => {
   const { post } = props;
 
   return (

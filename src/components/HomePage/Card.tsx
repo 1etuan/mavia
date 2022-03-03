@@ -32,7 +32,7 @@ const Icon = (id: number) => {
   }
 };
 
-export const MultiActionAreaCard = ({ card }: CardProps) => {
+export const CardHomePage = ({ card }: CardProps) => {
   return (
     <Grid item md={3}>
       <Card sx={{ height: '100%', display: 'flex', flexDirection: 'column' }}>

@@ -4,10 +4,10 @@ import Typography from '@mui/material/Typography';
 import * as React from 'react';
 
 import {
-  FeaturedPost,
+  InfoHomePage,
   Introduce,
-  MainFeaturedPost,
-  MultiActionAreaCard,
+  BannerHomePage,
+  CardHomePage,
 } from '@/components/HomePage';
 
 const cards = [
@@ -67,7 +67,7 @@ const posts = [
 export default function HomePage() {
   return (
     <>
-      <MainFeaturedPost />
+      <BannerHomePage />
       <Container
         disableGutters
         maxWidth='lg'
@@ -91,13 +91,13 @@ export default function HomePage() {
       >
         <Grid container spacing={4}>
           {cards.map((card, index) => (
-            <MultiActionAreaCard key={index} card={card} />
+            <CardHomePage key={index} card={card} />
           ))}
         </Grid>
 
         <Grid sx={{ flexGrow: 1, pt: 20 }}>
           {posts.map((post, index) => (
-            <FeaturedPost key={index} post={post} />
+            <InfoHomePage key={index} post={post} />
           ))}
         </Grid>
 
