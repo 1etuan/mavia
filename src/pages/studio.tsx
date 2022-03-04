@@ -175,32 +175,6 @@ const mediaCards = [
   },
 ];
 
-const posts = [
-  {
-    id: 1,
-    description:
-      'All of our game content is designed and developed from scratch, from conceptual designs to 3D character modeling and animations.',
-    image: 'https://skrice.com/home/info-1.jpg',
-    imageLabel: 'First-class Game Design and Development',
-    title: 'First-class Game Design and Development',
-  },
-  {
-    id: 2,
-    description:
-      'Engineering Infrastructure for Limitless PossibilitiesOur development team is not only investing resources into our games, but is also building long-term infrastructure for other Blockchain-based games.',
-    image: 'https://skrice.com/home/info-2.jpg',
-    imageLabel: 'Engineering Infrastructure for Limitless Possibilities',
-    title: 'Engineering Infrastructure for Limitless Possibilities',
-  },
-  {
-    id: 3,
-    description:
-      'Our games use economic models which we process and test using hundreds of simulations, ensuring the resilience and balance of all sectors of the ecosystem.',
-    image: 'https://skrice.com/home/info-3.jpg',
-    imageLabel: 'First-class Game Design and Development',
-    title: 'First-class Game Design and Development',
-  },
-];
 function HomePage() {
   return (
     <>
@@ -219,7 +193,10 @@ function HomePage() {
             </Description>
             <Grow in timeout={1000}>
               <FlexBox mx='auto' mt={4} justifyContent='center'>
-                <TransitionButton variant='primary' color='primary'>
+                <TransitionButton
+                  variant='primary'
+                  className='border-0 outline-none'
+                >
                   Contact US
                 </TransitionButton>
                 <TransitionButton variant='outline' className='ml-2'>
@@ -281,7 +258,7 @@ function HomePage() {
         </Grow>
 
         <FlexBox>
-          <Card variant='outlined'>
+          <Card className='border-0 p-2 shadow-none'>
             <Grid container spacing={4}>
               {FeatureCard.map((card, index) => (
                 <FeaturedCard key={index} card={card} />
@@ -385,12 +362,12 @@ function HomePage() {
 
       <Container>
         <FlexBox
-          className='cursor-pointer '
+          className='cursor-pointer items-center justify-center '
           maxWidth='lg'
           component='main'
-          sx={{ pt: 12, pb: 6, pl: 6 }}
+          sx={{ pt: 12, pb: 6 }}
         >
-          <Grid className='grid  grid-cols-1 gap-4 md:grid-cols-3'>
+          <Grid className='grid grid-cols-1 gap-4 md:grid-cols-3'>
             {mediaCards.map((card, index) => (
               <MediaCard key={index} card={card} />
             ))}

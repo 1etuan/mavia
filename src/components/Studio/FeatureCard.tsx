@@ -41,7 +41,10 @@ export const FeaturedCard = ({ card }: CardProps) => {
   return (
     // xs={12} md
     <Grid item xs={12} sm={6} md={4}>
-      <Card sx={{ height: '100%' }}>
+      <Card
+        sx={{ height: '100%' }}
+        className='border border-gray-200 shadow-none'
+      >
         <CardHeader avatar={Icon(card.id)} />
         <CardContent>
           <Typography gutterBottom variant='h5' component='h1'>

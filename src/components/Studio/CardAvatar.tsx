@@ -17,10 +17,13 @@ interface CardProps {
 export const MultiActionAreaCard = ({ card }: CardProps) => {
   return (
     <Grid item columns={40}>
-      <Card sx={{ height: '100%' }}>
+      <Card
+        sx={{ height: '100%' }}
+        className='border border-gray-200 shadow-none'
+      >
         <CardMedia
           component='img'
-          className='gap-3	 object-scale-down'
+          className='gap-3 object-scale-down'
           height='90'
           image={card.url}
         />

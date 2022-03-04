@@ -4,7 +4,7 @@ import Paper from '@mui/material/Paper';
 import Typography from '@mui/material/Typography';
 import * as React from 'react';
 
-export const MainFeaturedPost = () => {
+export const BannerHomePage = () => {
   return (
     <Paper
       sx={{

@@ -1,19 +1,45 @@
 /* eslint-disable @next/next/link-passhref */
-import { AppBar, Button, Grow, styled } from '@mui/material';
+import { CloseOutlined, MenuOutlined } from '@mui/icons-material';
+import {
+  AppBar,
+  Button,
+  Divider,
+  Drawer,
+  Grow,
+  IconButton,
+  styled,
+} from '@mui/material';
 import Link from 'next/link';
 import React from 'react';
 
 import FlexBox from '../atoms/FlexBox';
 import UnderlineLink from '../links/UnderlineLink';
 import NextImage from '../NextImage';
+import SelectLang from '../SelectLang';
 
 const AppBarStyled = styled(AppBar)(({ theme }) => ({
   padding: theme.spacing(3),
   transition: 'all .3s',
 }));
 
+const routes = [
+  {
+    label: 'Home',
+    uri: '/',
+  },
+  {
+    label: 'Mavia',
+    uri: '/mavia',
+  },
+  {
+    label: 'Studio',
+    uri: '/studio',
+  },
+];
+
 export default function Header() {
   const [state, setState] = React.useState<boolean>(true);
+  const [open, setOpen] = React.useState(false);
   React.useEffect(() => {
     window.addEventListener('scroll', () => {
       let result = false;
@@ -33,7 +59,7 @@ export default function Header() {
           ? {
               backgroundColor: 'rgba(255,255,255)',
             }
-          : { backgroundColor: 'rgba(255,255,255, .75)' }
+          : { backgroundColor: 'rgba(255,255,255, .95)' }
       }
     >
       <Grow in timeout={1000}>
@@ -48,28 +74,75 @@ export default function Header() {
               />
             </Link>
           </FlexBox>
-          <FlexBox flex={1} justifyContent='center'>
-            <UnderlineLink
-              href='/components'
-              className='border-[unset] border-b-0'
-            >
-              <span className='text-black'>Components</span>
-            </UnderlineLink>
-            <Button>Logo</Button>
-            <Button>
-              <UnderlineLink
-                href='/studio'
-                className='border-[unset] border-b-0'
-              >
-                <span className='text-black'>studio</span>
-              </UnderlineLink>
-            </Button>
-          </FlexBox>
-          <FlexBox>
-            <Button>Logo</Button>
-          </FlexBox>
+          <FlexBoxMD flex={1} justifyContent='center' className='gap-4'>
+            {routes.map((i) => (
+              <Button key={i.label}>
+                <UnderlineLink
+                  href={i.uri}
+                  className='border-[unset] border-b-0'
+                >
+                  <span className='text-black'>{i.label}</span>
+                </UnderlineLink>
+              </Button>
+            ))}
+          </FlexBoxMD>
+          <SelectLang />
+          <FlexBoxMobile>
+            <IconButton onClick={() => setOpen(true)}>
+              <MenuOutlined htmlColor='#000' />
+            </IconButton>
+          </FlexBoxMobile>
         </FlexBox>
       </Grow>
+      <Drawer onClose={() => setOpen(false)} open={open}>
+        <FlexBox width='100vw' height='100vh' flexDirection='column'>
+          <FlexBox justifyContent='space-between' p={2} className='shadow-xl'>
+            <Link href='/'>
+              <NextImage
+                className='cursor-pointer'
+                width={90}
+                height={35}
+                src='https://www.bitcastlewar.io/images/banners/logoBCW.png'
+              />
+            </Link>
+            <IconButton onClick={() => setOpen(false)}>
+              <CloseOutlined />
+            </IconButton>
+          </FlexBox>
+          <Divider />
+          <FlexBox
+            flex={1}
+            justifyContent='center'
+            flexDirection='column'
+            mt={4}
+          >
+            {routes.map((i) => (
+              <UnderlineLink
+                key={i.label}
+                href={i.uri}
+                className='border-[unset] border-b-0 p-4'
+                onClick={() => {
+                  setOpen(false);
+                }}
+              >
+                <span className='mx-auto'>{i.label}</span>
+              </UnderlineLink>
+            ))}
+          </FlexBox>
+        </FlexBox>
+      </Drawer>
     </AppBarStyled>
   );
 }
+
+const FlexBoxMD = styled(FlexBox)(({ theme }) => ({
+  [theme.breakpoints.down(769)]: {
+    display: 'none',
+  },
+}));
+
+const FlexBoxMobile = styled(FlexBox)(({ theme }) => ({
+  [theme.breakpoints.up(769)]: {
+    display: 'none',
+  },
+}));
