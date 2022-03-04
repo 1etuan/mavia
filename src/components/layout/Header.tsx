@@ -20,6 +20,7 @@ import SelectLang from '../SelectLang';
 const AppBarStyled = styled(AppBar)(({ theme }) => ({
   padding: theme.spacing(3),
   transition: 'all .3s',
+  className:' border-0 border-b-2 border-gray-200 shadow-none',
 }));
 
 const routes = [
@@ -74,7 +75,11 @@ export default function Header() {
               />
             </Link>
           </FlexBox>
-          <FlexBoxMD flex={1} justifyContent='center' className='gap-4'>
+          <FlexBoxMD
+            flex={1}
+            justifyContent='center'
+            className=' gap-4 border-0 shadow-none'
+          >
             {routes.map((i) => (
               <Button key={i.label}>
                 <UnderlineLink
@@ -95,8 +100,13 @@ export default function Header() {
         </FlexBox>
       </Grow>
       <Drawer onClose={() => setOpen(false)} open={open}>
-        <FlexBox width='100vw' height='100vh' flexDirection='column'>
-          <FlexBox justifyContent='space-between' p={2} className='shadow-xl'>
+        <FlexBox
+          width='100vw'
+          height='100vh'
+          flexDirection='column'
+          className='shadow-none'
+        >
+          <FlexBox justifyContent='space-between' p={2} className='shadow-none'>
             <Link href='/'>
               <NextImage
                 className='cursor-pointer'

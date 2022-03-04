@@ -35,7 +35,7 @@ const Icon = (id: number) => {
 export const CardHomePage = ({ card }: CardProps) => {
   return (
     <Grid item xs={12} md>
-      <Card sx={{ height: '100%', display: 'flex', flexDirection: 'column' }}>
+      <Card className='border border-gray-200 shadow-none' sx={{ height: '100%', display: 'flex', flexDirection: 'column' }}>
         <CardHeader avatar={Icon(card.id)} />
         <CardContent sx={{ flexGrow: 1 }}>
           <Typography gutterBottom variant='h5' component='h1'>
