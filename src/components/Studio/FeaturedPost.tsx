@@ -6,11 +6,8 @@ import Paper from '@mui/material/Paper';
 import Typography from '@mui/material/Typography';
 import * as React from 'react';
 
-import ArrowLink from '@/components/links/ArrowLink';
-import ButtonLink from '@/components/links/ButtonLink';
-
-interface InfoMaviaPageProps {
-  info: {
+interface FeaturedPostProps {
+  post: {
     description: string;
     image: string;
     imageLabel: string;
@@ -19,25 +16,25 @@ interface InfoMaviaPageProps {
   };
 }
 
-const Image = ({ info }: InfoMaviaPageProps) => {
+const Image = ({ post }: FeaturedPostProps) => {
   return (
     <>
       <Paper elevation={0}>
         <CardMedia
           component='img'
           sx={{ width: '100%', borderRadius: 2 }}
-          image={info.image}
-          alt={info.imageLabel}
+          image={post.image}
+          alt={post.imageLabel}
         />
       </Paper>
     </>
   );
 };
 
-const Text = ({ info }: InfoMaviaPageProps) => {
+const Text = ({ post }: FeaturedPostProps) => {
   return (
     <>
-      <Paper elevation={0} sx={{ pb: 20, margin: '40px' }}>
+      <Paper elevation={0} sx={{ margin: '40px' }}>
         <Typography
           gutterBottom
           component='p'
@@ -45,30 +42,22 @@ const Text = ({ info }: InfoMaviaPageProps) => {
           fontSize={40}
           fontWeight='bold'
         >
-          {info.title}
+          {post.title}
         </Typography>
         <Typography variant='subtitle1' fontSize={18} paragraph>
-          {info.description}
+          {post.description}
         </Typography>
-        <ArrowLink
-          as={ButtonLink}
-          variant='light'
-          className='inline-flex items-center'
-          href='/'
-        >
-          Learn more
-        </ArrowLink>
       </Paper>
     </>
   );
 };
 
-export const InfoMaviaPage = (props: InfoMaviaPageProps) => {
-  const { info } = props;
+export const FeaturedPost = (props: FeaturedPostProps) => {
+  const { post } = props;
 
   return (
     <>
-      <Grid item xs={12} key={info.id} sx={{ pb: 1 }}>
+      <Grid item xs={12} key={post.id} sx={{ pb: 1 }}>
         <Box
           sx={{
             p: 2,
@@ -77,15 +66,15 @@ export const InfoMaviaPage = (props: InfoMaviaPageProps) => {
             gap: 2,
           }}
         >
-          {info.id % 2 != 0 ? (
+          {post.id % 2 != 0 ? (
             <>
-              <Image info={info} />
-              <Text info={info} />
+              <Image post={post} />
+              <Text post={post} />
             </>
           ) : (
             <>
-              <Text info={info} />
-              <Image info={info} />
+              <Text post={post} />
+              <Image post={post} />
             </>
           )}
         </Box>

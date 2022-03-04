@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import Box from '@mui/material/Box';
 import FormControl from '@mui/material/FormControl';
 import MenuItem from '@mui/material/MenuItem';
@@ -29,13 +30,7 @@ export default function BasicSelect() {
   return (
     <Box sx={{ minWidth: 120 }}>
       <FormControl fullWidth>
-        <Select
-          labelId='demo-simple-select-label'
-          id='demo-simple-select'
-          value={value}
-          onChange={handleChange}
-          sx={{ maxHeight: '5vh' }}
-        >
+        <Select value={value} onChange={handleChange} sx={{ height: '42px' }}>
           {countries.map((code) => (
             <MenuItem key={code} value={code}>
               <div className='inline-flex items-center justify-center'>

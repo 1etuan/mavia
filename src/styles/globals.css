@@ -112,6 +112,7 @@
     }
   }
   .animated-underline:hover,
+  .animated-underline.active,
   .animated-underline:focus-visible {
     background-size: 0 2px, 100% 2px;
   }

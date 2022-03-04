@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/alt-text */
 import Box from '@mui/material/Box';
 import CardMedia from '@mui/material/CardMedia';
 import Grid from '@mui/material/Grid';

@@ -1,6 +1,7 @@
 import { CssBaseline, styled } from '@mui/material';
 import * as React from 'react';
 
+import Footer from './Footer';
 import Header from './Header';
 import FlexBox from '../atoms/FlexBox';
 
@@ -20,6 +21,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       <FlexBox mt='89.5px' flexDirection='column'>
         {children}
       </FlexBox>
+      <Footer />
     </AppWrapper>
   );
 }

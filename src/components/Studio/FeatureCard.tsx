@@ -27,17 +27,26 @@ const Icon = (id: number) => {
       return <ShuffleIcon sx={{ fontSize: 40 }} />;
     case 4:
       return <GroupIcon sx={{ fontSize: 40 }} />;
+    case 5:
+      return <ShuffleIcon sx={{ fontSize: 40 }} />;
+    case 6:
+      return <ShowChartIcon sx={{ fontSize: 40 }} />;
+
     default:
       return;
   }
 };
 
-export const CardHomePage = ({ card }: CardProps) => {
+export const FeaturedCard = ({ card }: CardProps) => {
   return (
-    <Grid item xs={12} md>
-      <Card sx={{ height: '100%', display: 'flex', flexDirection: 'column' }}>
+    // xs={12} md
+    <Grid item xs={12} sm={6} md={4}>
+      <Card
+        sx={{ height: '100%' }}
+        className='border border-gray-200 shadow-none'
+      >
         <CardHeader avatar={Icon(card.id)} />
-        <CardContent sx={{ flexGrow: 1 }}>
+        <CardContent>
           <Typography gutterBottom variant='h5' component='h1'>
             {card.title}
           </Typography>
