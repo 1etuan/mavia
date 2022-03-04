@@ -3,21 +3,14 @@ import * as React from 'react';
 
 import BasicSelect from '../inputs/Select';
 
-export default function SelectLang() {
-  const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
-  const open = Boolean(anchorEl);
-  const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
-    setAnchorEl(event.currentTarget);
-  };
-  const handleClose = () => {
-    setAnchorEl(null);
-  };
-
-  return (
-    <ShowWhenMD>
-      <BasicSelect />
-    </ShowWhenMD>
-  );
+export default function SelectLang({ hiddenMobile = true }) {
+  if (hiddenMobile)
+    return (
+      <ShowWhenMD>
+        <BasicSelect />
+      </ShowWhenMD>
+    );
+  return <BasicSelect />;
 }
 
 const ShowWhenMD = styled('div')(({ theme }) => ({

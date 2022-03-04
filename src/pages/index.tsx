@@ -9,6 +9,7 @@ import {
   InfoHomePage,
   Introduce,
 } from '@/components/HomePage';
+import Seo from '@/components/Seo';
 
 const cards = [
   {
@@ -67,6 +68,7 @@ const posts = [
 export default function HomePage() {
   return (
     <>
+      <Seo title='Home' />
       <BannerHomePage />
       <Container
         disableGutters

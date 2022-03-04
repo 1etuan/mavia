@@ -18,7 +18,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
     <AppWrapper>
       <CssBaseline />
       <Header />
-      <FlexBox mt='89.5px' flexDirection='column'>
+      <FlexBox mt='74px' flexDirection='column'>
         {children}
       </FlexBox>
       <Footer />
