@@ -7,7 +7,12 @@ import ButtonLink from '@/components/links/ButtonLink';
 
 export const IntroduceMaviaPage = () => {
   return (
-    <Container disableGutters maxWidth='lg' component='main' sx={{ pb: 10 }}>
+    <Container
+      disableGutters
+      maxWidth='lg'
+      component='main'
+      sx={{ pb: 10, px: 2 }}
+    >
       <Typography variant='h4' align='center' fontWeight='bold' gutterBottom>
         Introducing Heroes of Mavia
       </Typography>
