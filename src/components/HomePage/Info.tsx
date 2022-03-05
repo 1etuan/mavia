@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/alt-text */
+import { CardMedia, Grid, Paper, styled, Typography } from '@mui/material';
 import * as React from 'react';
-import { CardMedia, Grid, Paper, Typography, styled } from '@mui/material';
 
 interface InfoHomePageProps {
   post: {
