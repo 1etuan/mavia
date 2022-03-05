@@ -3,6 +3,7 @@ import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 import * as React from 'react';
 
+import FlexBox from '@/components/atoms/FlexBox';
 import {
   BannerMaviaPage,
   CardMaviaPage,
@@ -80,7 +81,9 @@ export default function MaviaPage() {
             <CardMaviaPage key={index} card={card} />
           ))}
         </Grid>
-        <QuoteMaviaPage />
+        <FlexBox className='px-[20px]'>
+          <QuoteMaviaPage />
+        </FlexBox>
 
         <Grid sx={{ flexGrow: 1, pt: 20 }}>
           {informations.map((info, index) => (
@@ -95,7 +98,6 @@ export default function MaviaPage() {
           Download the Mavia Game Deck in over 12 languages, as well as the
           Mavia Press Kit for branding assets.
         </Typography>
-
         <DownloadMaviaPage />
 
         <Typography

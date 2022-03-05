@@ -25,7 +25,7 @@ export const DownloadMaviaPage = () => {
               component='img'
               alt='green iguana'
               image='https://skrice.com/mavia/download-1.png'
-              sx={{ maxHeight: '44vh' }}
+              sx={{ maxHeight: '44vh', paddingLeft: '20px', border: 'none' }}
             />
             <CardActions
               sx={{
@@ -38,14 +38,17 @@ export const DownloadMaviaPage = () => {
                 gutterBottom
                 component='div'
                 fontSize={18}
-                sx={{ alignItems: 'center' }}
+                sx={{ alignItems: 'center', paddingLeft: '9px' }}
               >
                 Game Deck
               </Typography>
               <Box sx={{ paddingRight: '10px' }}>
                 <BasicSelect />
               </Box>
-              <ButtonLink href='#' className='bg-primary-600 text-white'>
+              <ButtonLink
+                href='#'
+                className='mx-[7px] bg-primary-600 text-white'
+              >
                 <Typography fontSize={15}>Download</Typography>
                 <FileDownloadIcon />
               </ButtonLink>
@@ -56,25 +59,25 @@ export const DownloadMaviaPage = () => {
               component='img'
               alt='green iguana'
               image='https://skrice.com/mavia/download-2.jpg'
-              sx={{ maxHeight: '44vh' }}
+              sx={{ maxHeight: '44vh', paddingRight: '19px' }}
             />
             <CardActions
               sx={{
                 display: 'grid',
                 gridTemplateColumns: { md: '1fr 3fr 1fr' },
                 mt: 2,
+                mr: '10px',
               }}
             >
               <Typography
                 gutterBottom
                 component='div'
                 fontSize={18}
-                sx={{ alignItems: 'center' }}
+                sx={{ alignItems: 'center', paddingRight: '9px' }}
               >
                 Brand Assets
               </Typography>
-              <div></div>
-              <ButtonLink href='#' className='bg-primary-600 text-white'>
+              <ButtonLink href='#' className='mr-3 bg-primary-600 text-white'>
                 <Typography fontSize={15}>Download</Typography>
                 <FileDownloadIcon />
               </ButtonLink>

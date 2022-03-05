@@ -16,7 +16,10 @@ export const QuoteMaviaPage = () => {
           borderRadius: '15px',
         }}
       >
-        <Paper elevation={0} sx={{ backgroundColor: 'black', padding: '70px' }}>
+        <Paper
+          elevation={0}
+          sx={{ backgroundColor: 'black', padding: '60px', marginLeft: '15px' }}
+        >
           <CardMedia
             component='img'
             sx={{ width: '100%' }}

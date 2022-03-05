@@ -32,7 +32,18 @@ const Icon = (id: number) => {
 export const CardMaviaPage = ({ card }: CardProps) => {
   return (
     <Grid item md={4}>
-      <Card className='border border-gray-200 shadow-none' sx={{ height: '100%', display: 'flex', flexDirection: 'column' }}>
+      <Card
+        className='border border-gray-200 shadow-none'
+        sx={{
+          height: '100%',
+          display: 'flex',
+          flexDirection: 'column',
+          justifyContent: 'center',
+          // alignItems : 'center',
+          paddingX: '14px',
+          marginX: '14px',
+        }}
+      >
         <CardHeader avatar={Icon(card.id)} />
         <CardContent sx={{ flexGrow: 1 }}>
           <Typography
