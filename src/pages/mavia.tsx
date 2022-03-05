@@ -12,6 +12,7 @@ import {
   QuestionsMaviaPage,
   QuoteMaviaPage,
 } from '@/components/MaviaPage';
+import Seo from '@/components/Seo';
 
 const cards = [
   {
@@ -64,6 +65,8 @@ const informations = [
 export default function MaviaPage() {
   return (
     <>
+      <Seo title='Mavia' />
+
       <BannerMaviaPage />
       <Container
         disableGutters

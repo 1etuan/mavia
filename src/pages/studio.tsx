@@ -256,7 +256,7 @@ function HomePage() {
             </Grid>
           </FlexBox>
         </Grow>
-
+       
         <FlexBox>
           <Card className='border-0 p-2 shadow-none'>
             <Grid container spacing={4}>
@@ -288,9 +288,9 @@ function HomePage() {
             className='justify-center'
             sx={{ pt: 6, pb: 6 }}
           >
-            <Grid className='grid grid-cols-2 gap-4 md:grid-cols-5'>
+            <Grid className='grid mx-[20px] grid-cols-2 gap-4 md:grid-cols-5'>
               {cards.map((card, index) => (
-                <MultiActionAreaCard
+                <MultiActionAreaCard 
                   key={index}
                   card={{ ...card, id: index }}
                 />
