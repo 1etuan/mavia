@@ -45,6 +45,8 @@ const posts = [
     image: 'https://skrice.com/home/info-1.jpg',
     imageLabel: 'First-class Game Design and Development',
     title: 'First-class Game Design and Development',
+    mobileDescription:
+      'All of our game content is designed and developed from scratch, from conceptual designs to 3D character modeling and animations.',
   },
   {
     id: 2,
@@ -53,6 +55,8 @@ const posts = [
     image: 'https://skrice.com/home/info-2.jpg',
     imageLabel: 'Engineering Infrastructure for Limitless Possibilities',
     title: 'Engineering Infrastructure for Limitless Possibilities',
+    mobileDescription:
+      'Our development team is not only investing resources into our games, but is also building long-term infrastructure for other Blockchain-based games.',
   },
   {
     id: 3,
@@ -61,6 +65,8 @@ const posts = [
     image: 'https://skrice.com/home/info-3.jpg',
     imageLabel: 'First-class Game Design and Development',
     title: 'First-class Game Design and Development',
+    mobileDescription:
+      'Our games use economic models which we process and test using hundreds of simulations, ensuring the resilience and balance of all sectors of the ecosystem.',
   },
 ];
 
@@ -72,7 +78,7 @@ export default function HomePage() {
         disableGutters
         maxWidth='lg'
         component='main'
-        sx={{ pt: 6, pb: 10 }}
+        sx={{ pt: 6, pb: 10, padding: '25px' }}
       >
         <Typography variant='h4' align='center' fontWeight='bold' gutterBottom>
           Experience the future of gaming
@@ -87,9 +93,9 @@ export default function HomePage() {
         disableGutters
         maxWidth='lg'
         component='main'
-        sx={{ pt: 6, pb: 10 }}
+        sx={{ pt: 6, pb: 10, pd: 10, padding: '20px' }}
       >
-        <Grid container spacing={4}>
+        <Grid container>
           {cards.map((card, index) => (
             <CardHomePage key={index} card={card} />
           ))}

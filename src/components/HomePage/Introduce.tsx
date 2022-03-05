@@ -11,7 +11,7 @@ import ButtonLink from '@/components/links/ButtonLink';
 
 export const Introduce = () => {
   return (
-    <Grid item xs={12} sx={{ pb: 1 }}>
+    <Grid item xs={12} sm={12} md={12} sx={{ pb: 1, padding: '15px' }}>
       <Box
         sx={{
           display: 'grid',
@@ -41,10 +41,12 @@ export const Introduce = () => {
           <Grid
             item
             xs={12}
+            sm={12}
+            md={12}
             sx={{
               p: 2,
               display: 'grid',
-              gridTemplateColumns: { md: '1fr 1fr 1fr' },
+              gridTemplateColumns: { md: '1fr 1fr 1fr', sm: '3fr 2fr 2fr' },
               gap: 3,
             }}
           >
@@ -70,9 +72,6 @@ export const Introduce = () => {
               </Typography>
             </Paper>
           </Grid>
-          {/* <Typography variant="subtitle1" fontSize={18} paragraph>
-            string
-          </Typography> */}
         </Paper>
         <Paper
           elevation={0}
