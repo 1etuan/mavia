@@ -30,29 +30,32 @@ export const BannerHomePage = () => {
         }}
       />
       <Grid container>
-        <Grid item md={6}>
-          <Box
-            sx={{
-              position: 'relative',
-              p: { xs: 3, md: 15 },
-              pr: { md: '10vh' },
-            }}
+        <Grid
+          item
+          xs={12}
+          sm={12}
+          md={6}
+          sx={{
+            position: 'relative',
+            padding: '60px',
+            maxHeight: '60vh',
+            width: '60vw',
+          }}
+        >
+          <Typography
+            component='h1'
+            variant='h3'
+            color='inherit'
+            fontWeight='bold'
+            gutterBottom
           >
-            <Typography
-              component='h1'
-              variant='h3'
-              color='inherit'
-              fontWeight='bold'
-              gutterBottom
-            >
-              We Create Disruptive Blockchain Games
-            </Typography>
-            <Typography variant='h5' fontSize={21} color='inherit'>
-              Skrice is a game design and development studio with a mission to
-              bring mass-adoption of blockchain technology through player-owned
-              digital worlds.
-            </Typography>
-          </Box>
+            We Create Disruptive Blockchain Games
+          </Typography>
+          <Typography variant='h5' fontSize={21} color='inherit'>
+            Skrice is a game design and development studio with a mission to
+            bring mass-adoption of blockchain technology through player-owned
+            digital worlds.
+          </Typography>
         </Grid>
       </Grid>
     </Paper>
