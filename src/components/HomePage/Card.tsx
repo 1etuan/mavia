@@ -34,11 +34,24 @@ const Icon = (id: number) => {
 
 export const CardHomePage = ({ card }: CardProps) => {
   return (
-    <Grid item xs={12} md>
-      <Card className='border border-gray-200 shadow-none' sx={{ height: '100%', display: 'flex', flexDirection: 'column' }}>
+    <Grid item xs={12} sm={6} md={3} sx={{ padding: '12px' }}>
+      <Card
+        sx={{
+          height: '100%',
+          display: 'flex',
+          flexDirection: 'column',
+          boxShadow: 'none',
+          border: '1px solid rgb(229, 229, 229)',
+        }}
+      >
         <CardHeader avatar={Icon(card.id)} />
         <CardContent sx={{ flexGrow: 1 }}>
-          <Typography gutterBottom variant='h5' component='h1'>
+          <Typography
+            gutterBottom
+            variant='h5'
+            fontWeight='bold'
+            component='h1'
+          >
             {card.title}
           </Typography>
           <Typography>{card.description}</Typography>
