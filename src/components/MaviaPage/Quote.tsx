@@ -1,7 +1,8 @@
+import Avatar from '@mui/material/Avatar';
 import Box from '@mui/material/Box';
-import CardMedia from '@mui/material/CardMedia';
 import Grid from '@mui/material/Grid';
 import Paper from '@mui/material/Paper';
+import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
 import * as React from 'react';
 
@@ -11,22 +12,18 @@ export const QuoteMaviaPage = () => {
       <Box
         sx={{
           display: 'grid',
-          gridTemplateColumns: { md: '1fr 3fr' },
+          gridTemplateColumns: { md: '1fr 3fr', sm: '1fr 3fr' },
           backgroundColor: 'black',
           borderRadius: '15px',
         }}
       >
-        <Paper
-          elevation={0}
-          sx={{ backgroundColor: 'black', padding: '60px', marginLeft: '15px' }}
-        >
-          <CardMedia
-            component='img'
-            sx={{ width: '100%' }}
-            image='https://skrice.com/mavia/quote.png'
-            alt='img'
+        <Stack sx={{ alignItems: 'center', mt: 7 }}>
+          <Avatar
+            alt='quote'
+            src='https://skrice.com/mavia/quote.png'
+            sx={{ width: 140, height: 140 }}
           />
-        </Paper>
+        </Stack>
         <Paper
           elevation={0}
           sx={{ margin: '60px 30px', backgroundColor: 'black' }}

@@ -1,43 +1,37 @@
 /* eslint-disable jsx-a11y/alt-text */
-import Box from '@mui/material/Box';
-import CardMedia from '@mui/material/CardMedia';
-import Grid from '@mui/material/Grid';
-import Paper from '@mui/material/Paper';
-import Typography from '@mui/material/Typography';
+import { CardMedia, Grid, Paper, styled, Typography } from '@mui/material';
 import * as React from 'react';
 
-import ArrowLink from '@/components/links/ArrowLink';
-import ButtonLink from '@/components/links/ButtonLink';
-
 interface InfoMaviaPageProps {
-  info: {
+  post: {
     description: string;
     image: string;
     imageLabel: string;
     title: string;
     id: number;
+    mobileDescription: string;
   };
 }
 
-const Image = ({ info }: InfoMaviaPageProps) => {
+const Image = ({ post }: InfoMaviaPageProps) => {
   return (
     <>
       <Paper elevation={0}>
         <CardMedia
           component='img'
           sx={{ width: '100%', borderRadius: 2 }}
-          image={info.image}
-          alt={info.imageLabel}
+          image={post.image}
+          alt={post.imageLabel}
         />
       </Paper>
     </>
   );
 };
 
-const Text = ({ info }: InfoMaviaPageProps) => {
+const TextMD = ({ post }: InfoMaviaPageProps) => {
   return (
     <>
-      <Paper elevation={0} sx={{ pb: 20, margin: '40px' }}>
+      <Paper elevation={0}>
         <Typography
           gutterBottom
           component='p'
@@ -45,51 +39,91 @@ const Text = ({ info }: InfoMaviaPageProps) => {
           fontSize={40}
           fontWeight='bold'
         >
-          {info.title}
+          {post.title}
         </Typography>
         <Typography variant='subtitle1' fontSize={18} paragraph>
-          {info.description}
+          {post.description}
         </Typography>
-        <ArrowLink
-          as={ButtonLink}
-          variant='light'
-          className='inline-flex items-center'
-          href='/'
+      </Paper>
+    </>
+  );
+};
+
+const TextMobile = ({ post }: InfoMaviaPageProps) => {
+  return (
+    <>
+      <Paper elevation={0}>
+        <Typography
+          gutterBottom
+          component='p'
+          variant='h4'
+          fontSize={40}
+          fontWeight='bold'
         >
-          Learn more
-        </ArrowLink>
+          {post.title}
+        </Typography>
+        <Typography variant='subtitle1' fontSize={18} paragraph>
+          {post.mobileDescription}
+        </Typography>
       </Paper>
     </>
   );
 };
 
 export const InfoMaviaPage = (props: InfoMaviaPageProps) => {
-  const { info } = props;
+  const { post } = props;
 
   return (
     <>
-      <Grid item xs={12} key={info.id} sx={{ pb: 1 }}>
-        <Box
-          sx={{
-            p: 2,
-            display: 'grid',
-            gridTemplateColumns: { md: '1fr 1fr' },
-            gap: 2,
-          }}
-        >
-          {info.id % 2 != 0 ? (
-            <>
-              <Image info={info} />
-              <Text info={info} />
-            </>
-          ) : (
-            <>
-              <Text info={info} />
-              <Image info={info} />
-            </>
-          )}
-        </Box>
-      </Grid>
+      <GridMD
+        item
+        md={12}
+        key={post.id}
+        sx={{
+          p: 2,
+          display: 'grid',
+          gridTemplateColumns: { md: '1fr 1fr' },
+          gap: 5,
+        }}
+      >
+        {post.id % 2 != 0 ? (
+          <>
+            <Image post={post} />
+            <TextMD post={post} />
+          </>
+        ) : (
+          <>
+            <TextMD post={post} />
+            <Image post={post} />
+          </>
+        )}
+      </GridMD>
+      <GridMobile
+        xs={12}
+        sm={12}
+        key={post.id}
+        sx={{
+          p: 2,
+          display: 'grid',
+          gridTemplateColumns: { md: '1fr 1fr' },
+          gap: 5,
+        }}
+      >
+        <Image post={post} />
+        <TextMobile post={post} />
+      </GridMobile>
     </>
   );
 };
+
+const GridMD = styled(Grid)(({ theme }) => ({
+  [theme.breakpoints.down(900)]: {
+    display: 'None',
+  },
+}));
+
+const GridMobile = styled(Grid)(({ theme }) => ({
+  [theme.breakpoints.up(900)]: {
+    display: 'None',
+  },
+}));
