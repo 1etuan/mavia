@@ -13,35 +13,51 @@ import ButtonLink from '@/components/links/ButtonLink';
 export const DownloadMaviaPage = () => {
   return (
     <>
-      <Grid item xs={12} sx={{ pb: 1, mt: 10 }}>
-        <Box
-          sx={{
-            display: 'grid',
-            gridTemplateColumns: { md: '1fr 1fr' },
-          }}
-        >
-          <Card sx={{ paddingRight: '20px', boxShadow: 'none' }}>
-            <CardMedia
-              component='img'
-              alt='green iguana'
-              image='https://skrice.com/mavia/download-1.png'
-              sx={{ maxHeight: '44vh', paddingLeft: '20px', border: 'none' }}
-            />
-            <CardActions
+      <Grid
+        item
+        xs={12}
+        sx={{
+          pb: 1,
+          mt: 10,
+          display: 'grid',
+          gridTemplateColumns: { md: '1fr 1fr' },
+        }}
+      >
+        <Card sx={{ padding: '20px', boxShadow: 'none' }}>
+          <CardMedia
+            component='img'
+            alt='green iguana'
+            image='https://skrice.com/mavia/download-1.png'
+            sx={{ maxHeight: '40vh', borderRadius: 4 }}
+          />
+          <CardActions
+            sx={{
+              display: 'grid',
+              gridTemplateColumns: {
+                md: 'repeat(2, 1fr)',
+                sm: 'repeat(2, 1fr)',
+              },
+            }}
+          >
+            <Typography
+              gutterBottom
+              component='div'
+              fontSize={18}
+              sx={{ alignItems: 'center', mb: 0, ml: 1, mt: 2 }}
+            >
+              Game Deck
+            </Typography>
+            <Grid
               sx={{
                 display: 'grid',
-                gridTemplateColumns: { md: '5fr 2fr 2fr' },
+                gridTemplateColumns: {
+                  md: 'repeat(2, 1fr)',
+                  sm: 'repeat(2, 1fr)',
+                  xs: 'repeat(2, 1fr)',
+                },
                 mt: 2,
               }}
             >
-              <Typography
-                gutterBottom
-                component='div'
-                fontSize={18}
-                sx={{ alignItems: 'center', paddingLeft: '9px' }}
-              >
-                Game Deck
-              </Typography>
               <Box sx={{ paddingRight: '10px' }}>
                 <BasicSelect />
               </Box>
@@ -52,38 +68,41 @@ export const DownloadMaviaPage = () => {
                 <Typography fontSize={15}>Download</Typography>
                 <FileDownloadIcon />
               </ButtonLink>
-            </CardActions>
-          </Card>
-          <Card sx={{ paddingLeft: '20px', boxShadow: 'none' }}>
-            <CardMedia
-              component='img'
-              alt='green iguana'
-              image='https://skrice.com/mavia/download-2.jpg'
-              sx={{ maxHeight: '44vh', paddingRight: '19px' }}
-            />
-            <CardActions
-              sx={{
-                display: 'grid',
-                gridTemplateColumns: { md: '1fr 3fr 1fr' },
-                mt: 2,
-                mr: '10px',
-              }}
+            </Grid>
+          </CardActions>
+        </Card>
+        <Card sx={{ padding: '20px', boxShadow: 'none' }}>
+          <CardMedia
+            component='img'
+            alt='green iguana'
+            image='https://skrice.com/mavia/download-2.jpg'
+            sx={{ maxHeight: '40vh', borderRadius: 4 }}
+          />
+          <CardActions
+            sx={{
+              display: 'grid',
+              gridTemplateColumns: {
+                md: '5fr 1fr',
+                sm: '4fr 1fr',
+                xs: '1fr 1fr',
+              },
+              mt: 2,
+            }}
+          >
+            <Typography
+              gutterBottom
+              component='div'
+              fontSize={18}
+              sx={{ alignItems: 'center', mb: 0, ml: 1 }}
             >
-              <Typography
-                gutterBottom
-                component='div'
-                fontSize={18}
-                sx={{ alignItems: 'center', paddingRight: '9px' }}
-              >
-                Brand Assets
-              </Typography>
-              <ButtonLink href='#' className='mr-3 bg-primary-600 text-white'>
-                <Typography fontSize={15}>Download</Typography>
-                <FileDownloadIcon />
-              </ButtonLink>
-            </CardActions>
-          </Card>
-        </Box>
+              Brand Assets
+            </Typography>
+            <ButtonLink href='#' className='mr-3 bg-primary-600 text-white'>
+              <Typography fontSize={15}>Download</Typography>
+              <FileDownloadIcon />
+            </ButtonLink>
+          </CardActions>
+        </Card>
       </Grid>
     </>
   );
