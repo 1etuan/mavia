@@ -56,7 +56,7 @@ export default function ToggleColorMode() {
     () =>
       createTheme({
         palette: {
-          type: mode,
+          mode: mode ? 'dark' : 'light',
         },
       }),
     [mode]
